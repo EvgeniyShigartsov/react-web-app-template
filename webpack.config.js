@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     filename: '[name].[contenthash].chunk.js',
-    clean: true
+    clean: true,
   },
   devServer: {
     port: 9000,
@@ -33,7 +34,6 @@ module.exports = {
   module: {
     rules: [
       {
-        // test: /\.tsx?$/,
         test: /\.(js|ts|tsx)$/,
         exclude: /(node_modules|dist)/,
         use: 'ts-loader',
@@ -50,9 +50,9 @@ module.exports = {
       //     }
       //   }
       // }
-    ]
+    ],
   },
   plugins: [
-    new HtmlWebpackPlugin({template: path.join(__dirname, 'index.html')})
-  ]
+    new HtmlWebpackPlugin({ template: path.join(__dirname, 'index.html') }),
+  ],
 }

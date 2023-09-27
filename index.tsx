@@ -6,9 +6,16 @@ const App: React.FC = () => {
 
   return (
     <div>
-    <span>Clicked {clicked} times </span>
-    <button onClick={() =>setClicked((p) => p + 1)}>Click me</button>
-  </div>
+      <span>
+        Clicked
+        {' '}
+        {clicked}
+        {' '}
+        times
+        {' '}
+      </span>
+      <button type="button" onClick={() => setClicked((p) => p + 1)}>Click me</button>
+    </div>
   )
 }
 
@@ -16,7 +23,7 @@ const container = document.querySelector('#root')
 const root = createRoot(container)
 
 root.render(
-<React.StrictMode>
-  <App/>
-  </React.StrictMode>
-  )
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)

@@ -1,0 +1,38 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "jsx": true,
+    "useJSXTextNode": true
+    // "project": true,
+    // "tsconfigRootDir": "__dirname",
+    // "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended-type-checked"],
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "airbnb"
+    ],
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks",
+    "jsx-a11y"
+    ],
+  "root": true,
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/no-var-requires": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "semi":"off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
