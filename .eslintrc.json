@@ -1,5 +1,10 @@
 {
   "parser": "@typescript-eslint/parser",
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -22,17 +27,15 @@
     "react-hooks",
     "jsx-a11y"
     ],
-  "root": true,
   "rules": {
     "no-console": "warn",
     "@typescript-eslint/no-var-requires": "error",
     "react-hooks/exhaustive-deps": "error",
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "semi":"off"
-  },
-  "env": {
-    "browser": true,
-    "node": true
-  }
+    "semi":"off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off"
+    }
 }
