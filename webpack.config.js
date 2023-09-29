@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const autoprefixer = require('autoprefixer')
 
 const BUILD_DIR = path.join(__dirname, 'dist')
 
@@ -45,6 +46,24 @@ module.exports = {
             ],
           },
         },
+      },
+      {
+        test: /\.(css|scss|sass)$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer,
+                ],
+              },
+            },
+          },
+        ],
       },
     ],
   },
