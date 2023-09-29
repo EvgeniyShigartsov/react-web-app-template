@@ -29,27 +29,23 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/,
-        exclude: /(node_modules|dist)/,
-        use: 'ts-loader',
+        test: /\.(js|jsx|ts|tsx)$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: 'defaults' }],
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
+          },
+        },
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: [
-      //         ['@babel/preset-env', {targets: "defaults" }],
-      //         '@babel/preset-react',
-      //       ]
-      //     }
-      //   }
-      // }
     ],
   },
   plugins: [
