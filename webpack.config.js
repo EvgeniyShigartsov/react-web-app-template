@@ -2,6 +2,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const BUILD_DIR = path.join(__dirname, 'dist')
 
@@ -50,7 +51,7 @@ module.exports = {
       {
         test: /\.(css|scss|sass)$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
           {
@@ -69,5 +70,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: path.join(__dirname, 'index.html') }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
   ],
 }
