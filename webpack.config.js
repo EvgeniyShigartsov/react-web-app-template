@@ -66,6 +66,15 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpeg|jpg|gif|svg)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/assets/[contenthash].[ext]',
+          },
+        },
+      },
     ],
   },
   plugins: [

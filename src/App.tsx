@@ -5,6 +5,8 @@ import scssModule from './styles/index.module.scss'
 import heading from './styles/heading.module.css'
 import content from './styles/content.module.css'
 
+import logo from './assets/Fake_Avatar.jpeg'
+
 const Heading = () => <h1 className={heading.heading}>My React and TypeScript App</h1>;
 
 const Content = () => <div className={content.content}>With CSS!</div>;
@@ -29,6 +31,7 @@ export const App: React.FC = () => {
         <div className={scssModule.inner}>inner</div>
       </div>
       <div className={scssModule.inner}>inner second</div>
+      <img src={logo} alt="logo" />
       <Heading />
       <Content />
     </div>
