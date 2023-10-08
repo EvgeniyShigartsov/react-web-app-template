@@ -68,11 +68,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpeg|jpg|gif|svg)$/i,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '/assets/[contenthash].[ext]',
-          },
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]',
         },
       },
     ],

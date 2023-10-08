@@ -11,6 +11,9 @@ const Heading = () => <h1 className={heading.heading}>My React and TypeScript Ap
 
 const Content = () => <div className={content.content}>With CSS!</div>;
 
+console.log('hi from /src/App.tsx on 14th line')
+console.log(logo)
+
 export const App: React.FC = () => {
   const [clicked, setClicked] = useState(0)
 
