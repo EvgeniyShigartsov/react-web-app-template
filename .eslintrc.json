@@ -34,8 +34,10 @@
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
     "semi":"off",
+    "max-len": ["error", {"code": 130}],
     "no-undef": "off",
     "no-unused-vars": "off",
+    "no-shadow": "off",
     "import/prefer-default-export": "off",
     "import/extensions": ["error", {"never": [".ts", ".tsx", ".js", ".jsx"]}],
     "react/react-in-jsx-scope": "off"
